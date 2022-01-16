@@ -1,0 +1,31 @@
+package Academy.E2EProject;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
+
+public class BaseClass {
+
+	public void initializeDriver() throws IOException {
+
+		String workingProjectDir = System.getProperty("user.dir");
+		Properties p = new Properties();
+		FileInputStream fis = new FileInputStream(
+				workingProjectDir + "\\src\\main\\java\\Academy\\E2EProject\\data.properties");
+		p.load(fis);
+
+		if (p.getProperty("browser").equalsIgnoreCase("Chrome")) {
+
+		}
+
+		if (p.getProperty("browser").equalsIgnoreCase("Firefox")) {
+
+		}
+
+		if (p.getProperty("browser").equalsIgnoreCase("IE")) {
+
+		}
+
+	}
+
+}

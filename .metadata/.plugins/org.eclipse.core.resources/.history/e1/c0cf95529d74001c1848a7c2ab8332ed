@@ -1,0 +1,38 @@
+package Academy.E2EProject;
+
+import java.io.IOException;
+
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+import pageObjects.HomePageObj;
+import pageObjects.LoginPageObj;
+
+public class HomePageTest extends BaseClass {
+
+	@Test
+	public void textValidationTest(String url) throws IOException {
+		driver = initializeDriver();
+		driver.get(url);
+		HomePageObj hpobj = new HomePageObj(driver);
+		hpobj.getloginLink().click();
+		LoginPageObj lpobj = new LoginPageObj(driver);
+		lpobj.getemailTxtBox().sendKeys(userName);
+		lpobj.getpwdTxtBox().sendKeys(pwd);
+		lpobj.getloginBtn().click();
+	}
+
+	@DataProvider
+	public Object[][] getData () {
+		Object [][] data = new Object[1][1];
+		data[0][0] = "https://www.qaclickacademy.com/";
+		return data;
+	}
+	
+	@AfterMethod
+	public void tearDown() {
+		driver.close();
+	}
+}

@@ -1,0 +1,12 @@
+package Academy.E2EProject;
+
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+
+public class ExtentReporter {
+	
+	public void getReporterObject () {
+		
+		ExtentSparkReporter reporter = new ExtentSparkReporter(System.getProperty("user.dir") + "\\reports\\" + "Automation Report_" + System.currentTimeMillis() + ".html");
+	}
+
+}

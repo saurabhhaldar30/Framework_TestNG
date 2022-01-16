@@ -1,0 +1,20 @@
+package Academy.E2EProject;
+
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class DatabaseTest {
+	
+	public void dbConnectionTest () throws SQLException {
+		
+		String host = "localhost";
+		String port = "3306";
+		String connectionURL = "jdbc:mysql://" + host + ":" + port + "/automation_demo_db";
+		String user = "root";
+		String pwd = "q112able";
+		
+		// Connect to MySql Db - automation_demo_db
+		DriverManager.getConnection(connectionURL, user, pwd);
+	}
+
+}

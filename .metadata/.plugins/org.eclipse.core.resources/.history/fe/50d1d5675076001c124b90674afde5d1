@@ -1,0 +1,19 @@
+package Academy.E2EProject;
+
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import org.testng.annotations.Test;
+
+public class DatabaseTest extends DBConnector {
+	
+	@Test
+	public void getEmpNameFromDB () throws SQLException {
+		
+		ArrayList<String> empNames = dbConnectionTest();
+		for (String name : empNames) {
+			System.out.println(name);
+		}
+	}
+
+}

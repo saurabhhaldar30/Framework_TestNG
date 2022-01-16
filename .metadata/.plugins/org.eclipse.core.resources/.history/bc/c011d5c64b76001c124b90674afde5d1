@@ -1,0 +1,17 @@
+package Academy.E2EProject;
+
+import java.sql.DriverManager;
+
+public class DatabaseTest {
+	
+	public void dbConnectionTest () {
+		
+		String host = "localhost";
+		String port = "3306";
+		String connectionURL = "";
+		String user = "root";
+		String pwd = "q112able";
+		DriverManager.getConnection(null, null, null);
+	}
+
+}

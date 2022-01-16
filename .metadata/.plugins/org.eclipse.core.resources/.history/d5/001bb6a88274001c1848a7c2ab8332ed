@@ -1,0 +1,18 @@
+package Academy.E2EProject;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
+
+public class BaseClass {
+	
+	public void initializeDriver () throws IOException {
+		
+		String workingProjectDir = System.getProperty("user.dir");
+		System.out.println(workingProjectDir);
+		Properties p = new Properties();
+		FileInputStream fis = new FileInputStream(workingProjectDir + "\\src\\main\\java\\Academy\\E2EProject\\data.properties");
+		p.load(fis);
+	}
+
+}

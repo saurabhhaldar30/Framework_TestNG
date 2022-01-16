@@ -1,0 +1,14 @@
+package Academy.E2EProject;
+
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+
+public class Utilities {
+	
+	public void screenCapture (WebDriver driver) {
+		
+		((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+	}
+
+}

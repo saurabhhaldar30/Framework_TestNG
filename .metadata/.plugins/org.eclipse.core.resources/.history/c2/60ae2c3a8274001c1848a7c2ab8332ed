@@ -1,0 +1,10 @@
+package Academy.E2EProject;
+
+public class BaseClass {
+	
+	public void initializeDriver () {
+		
+		
+	}
+
+}

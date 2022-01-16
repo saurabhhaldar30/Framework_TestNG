@@ -1,0 +1,24 @@
+package pageObjects;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+public class HomePage {
+	
+	@FindBy (xpath = "//*[@class='pull-right'] //span[text() = 'Login']")
+	By loginLink;
+	
+	@FindBy (xpath = "//*[@class='pull-right'] //span[text() = 'Register']")
+	By registerLink;
+	
+	public WebElement getloginLink (WebDriver driver) {		
+		return driver.findElement(loginLink);
+	}
+	
+	public WebElement getregisterLink (WebDriver driver) {		
+		return driver.findElement(registerLink);
+	}
+
+}

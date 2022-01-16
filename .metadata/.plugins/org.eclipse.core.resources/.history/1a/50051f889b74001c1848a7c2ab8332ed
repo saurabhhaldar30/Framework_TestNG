@@ -1,0 +1,40 @@
+package Academy.E2EProject;
+
+import java.io.IOException;
+
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+import pageObjects.HomePageObj;
+import pageObjects.LoginPageObj;
+
+public class HomePageTest extends BaseClass {
+	
+	@Test (dataProvider = "getData")
+	public void validLogin (String userName, String pwd) throws IOException {
+		driver = initializeDriver();
+		driver.get("https://www.qaclickacademy.com/");
+		HomePageObj hpobj = new HomePageObj(driver);
+		hpobj.getloginLink().click();
+		LoginPageObj lpobj = new LoginPageObj(driver);
+		lpobj.getemailTxtBox().sendKeys(userName);
+		lpobj.getpwdTxtBox().sendKeys(pwd);
+		lpobj.getloginBtn().click();
+	}
+	
+	@DataProvider
+	public Object[][] getData () {
+		Object [][] data = new Object[2][2];
+		data[0][0] = "ABC";
+		data[0][1] = "Password";
+		data[1][0] = "DEF";
+		data[1][1] = "Password";
+		return data;
+	}
+	
+	@AfterMethod
+	public void tearDown() {
+		driver.close();
+	}
+}
